@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.tsx",
-    "start:dev": "nodemon --watch src/ src/index.tsx"
+    "start": "node -r esm src/index.tsx",
+    "start:dev": "nodemon --watch src/ -r esm src/index.tsx"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.13.4"
+    "esm": "^3.2.25",
+    "joi": "^17.6.0",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "mongoose": "^6.2.9"
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",
