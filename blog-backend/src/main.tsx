@@ -3,7 +3,9 @@ import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import Router from 'koa-router';
 import mongoose from 'mongoose';
+
 import api from './api/index.tsx';
+import jwtMiddleware from './lib/jwtMiddleware.tsx';
 import createFakeData from './createFakeData.tsx';
 
 
@@ -27,7 +29,9 @@ const router = new Router();
 router.use('/api', api.routes());
 
 // 라우터 적용 전에 bodyParser 적용
+app.use(jwtMiddleware);
 app.use(bodyParser());
+
 
 // app 인스턴스에 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
