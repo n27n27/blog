@@ -5,7 +5,7 @@ import Button from "../components/common/Button";
 const PostListPage = () => {
     return (
         <>            
-            <Button>버튼</Button>
+            <Button fullWidth>버튼</Button>
         </>
     );
 };
