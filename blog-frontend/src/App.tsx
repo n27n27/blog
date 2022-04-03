@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { css } from '@emotion/react'
-import { Routes, Route } from 'react-router-dom';
-import PostListPage from './pages/PostListPage';
 import LoginPage from './pages/LoginPage';
+import PostListPage from './pages/PostListPage';
+import PostPage from './pages/PostPage';
 import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
-import PostPage from './pages/PostPage';
 
 const App = () => {
   return (    
