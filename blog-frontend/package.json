@@ -57,5 +57,5 @@
     "@emotion/babel-plugin": "^11.7.2",
     "@types/redux-actions": "^2.6.2"
   },
-  "proxy": "http://localhost:4000/"
+  "proxy": "http://localhost:4030/"
 }

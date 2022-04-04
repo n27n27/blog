@@ -19,9 +19,10 @@ type authFormProps = {
   form?: any
   onChange: any
   onSubmit: any
+  error?: any
 }
 
-const AuthForm = ({ type, form, onChange, onSubmit }: authFormProps) => {
+const AuthForm = ({ type, form, onChange, onSubmit, error }: authFormProps) => {
     const text = textMap[type];
   return (
     <div css={AuthformStyle}>
@@ -55,6 +56,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }: authFormProps) => {
                 value={form.passwordConfirm}
             />
         )}
+        {error && <div css={errorStyle}>{error}</div>}
         <Button cyan fullWidth>
           {text}
         </Button>
@@ -71,6 +73,13 @@ const AuthForm = ({ type, form, onChange, onSubmit }: authFormProps) => {
 };
 
 export default AuthForm;
+
+const errorStyle = css`
+  color: red;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+`
 
 const AuthformStyle = css`
   h3 {

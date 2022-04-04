@@ -7,6 +7,7 @@ type buttonProps = {
   fullWidth?: boolean;
   children: string;
   style?: any;
+  onLogout?: any  
 };
 
 const Button = ({ cyan, fullWidth, children }: buttonProps) => {
@@ -43,7 +44,9 @@ const Button = ({ cyan, fullWidth, children }: buttonProps) => {
       ${cyan && cyanStyle}
   `;
 
-  return <button css={buttonStyle}>{children}</button>;
+  return (
+    <button css={buttonStyle}>{children}</button>
+  );
 };
 
 export default Button;
