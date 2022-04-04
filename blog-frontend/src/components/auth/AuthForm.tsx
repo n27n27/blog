@@ -16,18 +16,24 @@ const textMap: textMapType = {
 
 type authFormProps = {
   type: string
+  form?: any
+  onChange: any
+  onSubmit: any
 }
-const AuthForm = ({ type }: authFormProps) => {
+
+const AuthForm = ({ type, form, onChange, onSubmit }: authFormProps) => {
     const text = textMap[type];
   return (
     <div css={AuthformStyle}>
       <h3>{text}</h3>
-      <form>
+      <form onSubmit={onSubmit}>
         <input
           css={inputStyle}
           autoComplete="username"
           name="username"
           placeholder="아이디"
+          onChange={onChange}
+          value={form.username}
         />
         <input
           css={inputStyle}
@@ -35,6 +41,8 @@ const AuthForm = ({ type }: authFormProps) => {
           name="password"
           placeholder="비밀번호"
           type="password"
+          onChange={onChange}
+          value={form.password}
         />
         {type === 'register' && (
             <input
@@ -43,6 +51,8 @@ const AuthForm = ({ type }: authFormProps) => {
                 name='passwordConfirm'
                 placeholder='비밀번호 확인'
                 type='password'
+                onChange={onChange}
+                value={form.passwordConfirm}
             />
         )}
         <Button cyan fullWidth>
